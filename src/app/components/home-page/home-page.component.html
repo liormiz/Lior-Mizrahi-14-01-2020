@@ -12,14 +12,16 @@
 </div>
 
 <div *ngIf="selectedCity">
-<mat-card class="main-card">
-	<mat-card-header>
-    <!-- <mat-icon>more_vert</mat-icon> -->
-		<mat-card-title>{{selectedCity.cityName}}</mat-card-title>
-		<mat-card-subtitle>{{selectedCity.CurrentWeather}}</mat-card-subtitle>
-  </mat-card-header>
-    <span *ngFor="let currentDay of days" class="row">
-      <weather-data [currentDay]="currentDay"></weather-data>
-    </span> 
-</mat-card>
-</div>
+  <mat-card class="main-card">
+	  <mat-card-header>
+      <!-- <mat-icon>more_vert</mat-icon> -->
+		  <mat-card-title>{{selectedCity.cityName}}</mat-card-title>
+		  <mat-card-subtitle>{{selectedCity.CurrentWeather}}</mat-card-subtitle>
+    </mat-card-header>
+    <div fxLayout="row wrap">
+      <div *ngFor="let currentDay of days" class="row">
+        <weather-data [currentDay]="currentDay"></weather-data>
+      </div> 
+    </div>
+  </mat-card>
+</div>  
