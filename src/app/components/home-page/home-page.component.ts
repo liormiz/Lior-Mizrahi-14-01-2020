@@ -33,11 +33,6 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  getCityData(){
-    if (this.selectedCity){
-
-    }
-  }
 
   getCurrentCity(cityToFind : string){
     debugger;

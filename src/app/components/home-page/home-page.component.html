@@ -8,9 +8,18 @@
         </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <button mat-button (click)="getCityData()">City Weather</button>
+  <!-- <button mat-button (click)="getCityData()">City Weather</button> -->
 </div>
 
-<div style="margin-left:10%">
-  <weather-data [currentDay]="currentDay"></weather-data>
+<div *ngIf="selectedCity">
+<mat-card class="main-card">
+	<mat-card-header>
+    <!-- <mat-icon>more_vert</mat-icon> -->
+		<mat-card-title>{{selectedCity.cityName}}</mat-card-title>
+		<mat-card-subtitle>{{selectedCity.CurrentWeather}}</mat-card-subtitle>
+	</mat-card-header>
+</mat-card>
 </div>
+<!-- <div style="margin-left:10%">
+  <weather-data [currentDay]="currentDay"></weather-data>
+</div> -->
