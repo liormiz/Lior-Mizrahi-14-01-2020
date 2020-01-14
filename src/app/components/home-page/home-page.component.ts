@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
   myControl : FormControl;
   options : any;
   cities : City[];
-  selectedCity : City;
+  selectedCity : City = { cityName : "Tel Aviv",CurrentWeather : 20 , cityKey : 0 };
   days : Day[] = [
                   { DayName : "Sun", WeatherValue : 10}, 
                   { DayName : "Mon", WeatherValue : 15},
