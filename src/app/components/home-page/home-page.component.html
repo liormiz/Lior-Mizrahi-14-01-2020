@@ -1,12 +1,12 @@
 <div style="text-align:center;">
   <mat-form-field>
-    <!-- <input type="text" placeholder="Enter Location" matInput [formControl]="myControl"
-         [matAutocomplete]="auto">
+    <input type="text" placeholder="Enter City" matInput [formControl]="myControl"
+         [matAutocomplete]="auto" (keyup)="getCitiesAutoComplete($event)">
        <mat-autocomplete #auto="matAutocomplete">
          <mat-option *ngFor="let option of options" [value]="option">
            {{option}}
         </mat-option>
-    </mat-autocomplete> -->
-    <input type="text" placeholder="Enter your city" matInput>
+    </mat-autocomplete>
   </mat-form-field>
+  <!-- <button mat-button (click)="getCitiesAutoComplete()">find city</button> -->
 </div>
