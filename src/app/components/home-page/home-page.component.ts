@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit {
   myControl : FormControl;
   options : any;
   cities : City[];
+  selectedCity : City;
 
   constructor(private WeatherService : WeatherService) { }
 
@@ -26,16 +27,36 @@ export class HomePageComponent implements OnInit {
   getCitiesAutoComplete(event : any){
     let citiesToSearch = event.currentTarget.value;
     this.WeatherService.getCitiesByCity(citiesToSearch).subscribe(data =>{
-      this.options = data;
+      this.cities = this.convertCities(data);
     });
   }
 
-  getCityData(data : any[]){
+  getCityData(){
+    if (this.selectedCity){
+
+    }
   }
 
-  onChange(event : any){
+  getCurrentCity(cityToFind : string){
+    debugger;
+    for (let i =0; i < this.cities.length; i++){
+      if (this.cities[i].cityName == cityToFind){
+        this.selectedCity = this.cities[i];
+      }
+    }
   }
 
   convertCities(data : any) : any{
+    let citiesToReturn : Array<City> = [];
+    if (data) {
+      for (let i =0; i < data.length; i++){
+        let city = new City();
+        city.cityName = data[i].LocalizedName;
+        city.cityKey = data[i].Key;
+        citiesToReturn.push(city);
+      }
+    }
+
+    return citiesToReturn;
   }
 }

@@ -2,11 +2,11 @@
   <mat-form-field>
     <input type="text" placeholder="Enter City" matInput [formControl]="myControl"
          [matAutocomplete]="auto" (keyup)="getCitiesAutoComplete($event)">
-       <mat-autocomplete #auto="matAutocomplete" (optionSelected)='onChange($event.option.value)'>
-         <mat-option *ngFor="let option of options" [value]="option.LocalizedName">
-           {{option.LocalizedName}}
+       <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getCurrentCity($event.option.value)'>
+         <mat-option *ngFor="let city of cities" [value]="city.cityName">
+           {{city.cityName}}
         </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <button mat-button (click)="getCityData(option)">City Weather</button>
+  <button mat-button (click)="getCityData()">City Weather</button>
 </div>
