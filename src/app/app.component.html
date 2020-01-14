@@ -1,4 +1,11 @@
-<div>
-  welcome !! sss
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>Herolo Weater Task</h1>
+    <div class="flex">
+      <a mat-button [routerLink]="'/home'"> Home </a>
+      <a mat-button [routerLink]="'/favorites'"> Favorites </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <router-outlet></router-outlet>
