@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { WeatherDataComponent } from './components/weather-data/weather-data.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { WeatherDataComponent } from './components/weather-data/weather-data.com
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    FlexLayoutModule 
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     MatSidenavModule
