@@ -16,7 +16,13 @@ export class HomePageComponent implements OnInit {
   options : any;
   cities : City[];
   selectedCity : City;
-  currentDay : Day = { DayName : "Sun", WeatherValue : 23};
+  days : Day[] = [
+                  { DayName : "Sun", WeatherValue : 10}, 
+                  { DayName : "Mon", WeatherValue : 15},
+                  { DayName : "Tues", WeatherValue : 25},
+                  { DayName : "Wen", WeatherValue : 20},
+                  { DayName : "Thurs", WeatherValue : 31},
+                ];
 
   constructor(private WeatherService : WeatherService) { }
 
@@ -39,6 +45,8 @@ export class HomePageComponent implements OnInit {
     for (let i =0; i < this.cities.length; i++){
       if (this.cities[i].cityName == cityToFind){
         this.selectedCity = this.cities[i];
+        //TODO: need to delete
+        this.selectedCity.CurrentWeather = 22;
       }
     }
   }
