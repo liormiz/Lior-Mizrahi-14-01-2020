@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LOCATIONS_OUT_COMPLETE } from 'src/app/config/consts';
 import {  WeatherService} from '../../services/weather/weather.service';
 import { FormControl } from '@angular/forms';
+import City from 'src/app/data/city.model';
 
 
 @Component({
@@ -11,31 +12,30 @@ import { FormControl } from '@angular/forms';
 })
 export class HomePageComponent implements OnInit {
   myControl : FormControl;
-  options : string[];
+  options : any;
+  cities : City[];
 
   constructor(private WeatherService : WeatherService) { }
 
   ngOnInit() {
     this.myControl = new FormControl();
     this.options;
+    this.cities = [];
   }
 
   getCitiesAutoComplete(event : any){
     let citiesToSearch = event.currentTarget.value;
     this.WeatherService.getCitiesByCity(citiesToSearch).subscribe(data =>{
-      this.options = this.getCityNames(data);
+      this.options = data;
     });
   }
 
-  getCityNames(data : any) : string[]{
-    let cities : any = [];
+  getCityData(data : any[]){
+  }
 
-    if (data){
-    for (let nIndex = 0; nIndex < data.length; nIndex++){
-      cities.push(data[nIndex].LocalizedName);
-      }
-    }
-    return cities;
+  onChange(event : any){
+  }
 
+  convertCities(data : any) : any{
   }
 }
