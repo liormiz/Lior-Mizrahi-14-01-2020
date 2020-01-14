@@ -1,0 +1,12 @@
+menu-items{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: flex-start;
+	align-content: stretch;
+}
+
+menu-items-align {
+    direction: ltr;
+}
