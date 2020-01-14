@@ -3,6 +3,7 @@ import { LOCATIONS_OUT_COMPLETE } from 'src/app/config/consts';
 import {  WeatherService} from '../../services/weather/weather.service';
 import { FormControl } from '@angular/forms';
 import City from 'src/app/data/city.model';
+import Day from 'src/app/data/day.model';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class HomePageComponent implements OnInit {
   options : any;
   cities : City[];
   selectedCity : City;
+  currentDay : Day = { DayName : "Sun", WeatherValue : 23};
 
   constructor(private WeatherService : WeatherService) { }
 
