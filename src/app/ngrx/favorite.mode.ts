@@ -1,4 +1,5 @@
 export default class Favorite {
-    Title: string;
-    IsCompleted: boolean;
+    CityName : string;
+    WeatherValue : number;
+    WeatherDesc : string;
 }
