@@ -9,10 +9,13 @@ p {
   .main-card {
     max-width: 80%;
     margin-left:10%;
-
   }
   
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
+  }
+
+  .card-margin {
+    margin-right: 10%;
   }

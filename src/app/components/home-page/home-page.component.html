@@ -18,10 +18,15 @@
 		  <mat-card-title>{{selectedCity.cityName}}</mat-card-title>
 		  <mat-card-subtitle>{{selectedCity.CurrentWeather}}</mat-card-subtitle>
     </mat-card-header>
-    <div fxLayout="row wrap">
-      <div *ngFor="let currentDay of days" class="row">
-        <weather-data [currentDay]="currentDay"></weather-data>
-      </div> 
-    </div>
+    <mat-card-content>
+      <div style="text-align: center;margin-top:10%;margin-bottom:10%">
+        <h1>Scattered clouds</h1>
+      </div>
+      <div fxLayout="row wrap">
+        <div *ngFor="let currentDay of days" class="card-margin">
+          <weather-data [currentDay]="currentDay"></weather-data>
+        </div> 
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>  
