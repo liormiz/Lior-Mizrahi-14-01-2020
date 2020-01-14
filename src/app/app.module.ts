@@ -8,11 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { WeatherDataComponent } from './components/weather-data/weather-data.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    FavoritesComponent,
+    WeatherDataComponent
   ],
   imports: [
     BrowserModule,
